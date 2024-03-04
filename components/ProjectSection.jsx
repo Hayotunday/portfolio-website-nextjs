@@ -68,15 +68,15 @@ const projectsData = [
     gitUrl: "https://github.com/Hayotunday/youtube-clone",
     previewUrl: "https://youtube-delta-me.netlify.app",
   },
-  // {
-  //   id: 7,
-  //   title: "AnnexXchangeme Crypto Website",
-  //   description: "Demo website for a cryptocurrency exchange.",
-  //   image: "/images/projects/annexxchange.jpg",
-  //   tag: ["All", "Web"],
-  //   gitUrl: "/",
-  //   previewUrl: "https://annexXchangeme.netlify.app",
-  // },
+  {
+    id: 7,
+    title: "AnnexXchangeme Crypto Website",
+    description: "Demo website for a cryptocurrency exchange.",
+    image: "/images/projects/annexxchange.jpg",
+    tag: ["All", "Web"],
+    gitUrl: "https://github.com/Annexexchange/Annex-Web",
+    previewUrl: "https://annexXchangeme.netlify.app",
+  },
 ];
 
 const ProjectSection = () => {
