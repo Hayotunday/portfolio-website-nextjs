@@ -1,64 +1,82 @@
-'use client'
-import React, { useRef, useState } from 'react'
-import ProjectCard from './ProjectCard'
-import ProjectTag from './ProjectTag';
-import { motion, useInView } from 'framer-motion'
+"use client";
+import React, { useRef, useState } from "react";
+import ProjectCard from "./ProjectCard";
+import ProjectTag from "./ProjectTag";
+import { motion, useInView } from "framer-motion";
 
 const projectsData = [
   {
-    id: 1,
+    id: 0,
     title: "React Portfolio Website",
-    description: "Project 1 description",
-    image: "/images/projects/1.png",
+    description: "My developer portfolio website",
+    image: "/images/projects/portfolio.jpg",
     tag: ["All", "Web"],
-    gitUrl: "/",
+    gitUrl: "https://github.com/Hayotunday/portfolio-website-nextjs",
     previewUrl: "/",
+  },
+  {
+    id: 1,
+    title: "Ai Prompts Website",
+    description: "Website for sharing ai-prompts among users of various AIs",
+    image: "/images/projects/ai-prompts.jpg",
+    tag: ["All", "Web"],
+    gitUrl: "https://github.com/Hayotunday/prompts",
+    previewUrl: "https://ai-prompts-me.vercel.app",
   },
   {
     id: 2,
-    title: "Potography Portfolio Website",
-    description: "Project 2 description",
-    image: "/images/projects/2.png",
+    title: "Takenote Website",
+    description: "Website for takenote mobile app.",
+    image: "/images/projects/takenotes.jpg",
     tag: ["All", "Web"],
-    gitUrl: "/",
-    previewUrl: "/",
+    gitUrl: "https://github.com/Hayotunday/takenotes-web",
+    previewUrl: "https://takenotes-web-me.vercel.app/",
   },
   {
     id: 3,
-    title: "E-commerce Application",
-    description: "Project 3 description",
-    image: "/images/projects/3.png",
+    title: "NFT Marketplace Website",
+    description: "Website for nft marketplace mobile app.",
+    image: "/images/projects/nft-marketplace.jpg",
     tag: ["All", "Web"],
-    gitUrl: "/",
-    previewUrl: "/",
+    gitUrl: "https://github.com/Hayotunday/nft-marketplace-web",
+    previewUrl: "https://nft-marketplace-me.vercel.app/",
   },
   {
     id: 4,
-    title: "Food Ordering Application",
-    description: "Project 4 description",
-    image: "/images/projects/4.png",
-    tag: ["All", "Mobile"],
-    gitUrl: "/",
-    previewUrl: "/",
+    title: "Data Finance Website",
+    description: "Data finance website.",
+    image: "/images/projects/data-finance.jpg",
+    tag: ["All", "Web"],
+    gitUrl: "https://github.com/Hayotunday/data-finance-app",
+    previewUrl: "https://data-finance-app-nine.vercel.app/",
   },
   {
     id: 5,
-    title: "React Firebase Template",
-    description: "Authentication and CRUD operations",
-    image: "/images/projects/5.png",
+    title: "Cars Hub Website",
+    description: "Website for view car make, models and other details.",
+    image: "/images/projects/cars-hub.jpg",
     tag: ["All", "Web"],
-    gitUrl: "/",
-    previewUrl: "/",
+    gitUrl: "https://github.com/Hayotunday/cars-hub",
+    previewUrl: "https://cars-hub-me.vercel.app/",
   },
   {
     id: 6,
-    title: "Full-stack Roadmap",
-    description: "Project 5 description",
-    image: "/images/projects/6.png",
+    title: "Youtube Clone Website ",
+    description: "Yoube clone for browse and streaming videos.",
+    image: "/images/projects/youtube-clone.jpg",
     tag: ["All", "Web"],
-    gitUrl: "/",
-    previewUrl: "/",
+    gitUrl: "https://github.com/Hayotunday/youtube-clone",
+    previewUrl: "https://youtube-delta-me.netlify.app",
   },
+  // {
+  //   id: 7,
+  //   title: "AnnexXchangeme Crypto Website",
+  //   description: "Demo website for a cryptocurrency exchange.",
+  //   image: "/images/projects/annexxchange.jpg",
+  //   tag: ["All", "Web"],
+  //   gitUrl: "/",
+  //   previewUrl: "https://annexXchangeme.netlify.app",
+  // },
 ];
 
 const ProjectSection = () => {
@@ -67,8 +85,8 @@ const ProjectSection = () => {
   const isInView = useInView(ref, { once: true });
 
   const handleTagChange = (newTag) => {
-    setTag(newTag)
-  }
+    setTag(newTag);
+  };
 
   const filteredProjects = projectsData.filter((project) =>
     project.tag.includes(tag)
@@ -77,14 +95,14 @@ const ProjectSection = () => {
   const cardVariants = {
     initial: { y: 50, opacity: 0 },
     animate: { y: 0, opacity: 1 },
-  }
+  };
 
   return (
-    <section className='' id='projects'>
-      <h2 className="text-center text-4xl font-bold text-white mt-4">
+    <section className="pt-12" id="projects">
+      <h2 className="text-center text-4xl font-bold text-white mt-4 py-8">
         My Projects
       </h2>
-      <div className='text-white flex flex-row justify-center items-center gap-2 py-6'>
+      {/* <div className="text-white flex flex-row justify-center items-center gap-2 py-6">
         <ProjectTag
           onClick={handleTagChange}
           name="All"
@@ -100,8 +118,11 @@ const ProjectSection = () => {
           name="Mobile"
           isSelected={tag === "Mobile"}
         />
-      </div>
-      <ul ref={ref} className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12">
+      </div> */}
+      <ul
+        ref={ref}
+        className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12"
+      >
         {filteredProjects.map((project, index) => (
           <motion.li
             key={index}
@@ -122,7 +143,7 @@ const ProjectSection = () => {
         ))}
       </ul>
     </section>
-  )
-}
+  );
+};
 
-export default ProjectSection
+export default ProjectSection;
